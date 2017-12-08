@@ -1,6 +1,5 @@
 import { observable, action, computed } from "mobx";
 import { asyncAction } from "mobx-utils";
-import validator from '../helper/validator';
 import axios from "axios";
 import * as utf8 from "utf8";
 

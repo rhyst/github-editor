@@ -38,7 +38,7 @@ export class SubmitControls extends React.Component<Props, State> {
     isValid = (replaceState: {} = {}) => {
         let state = this.state;
         let validState = { ...this.state, ...replaceState }
-        let { path, advanced, type, location, date, commit } = validState;
+        let { path, commit } = validState;
         if (!this.props.appState.isNewContent) {
             this.setState({ valid: (commit) ? true : false })            
         } else {
