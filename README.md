@@ -17,15 +17,18 @@ I wanted a way for less tech savvy users to be able to edit the content on a sta
 
 - A Github App
 - Github App is installed on repository and user has access to repository
-- A server to run relays (for authentication and certain API endpoints)
+- [Some server side application to relay certain requests](https://github.com/rhyst/github-relay) (for authentication and certain API endpoints)
 
 ## Limitations
 
 - Requirement for server running relay code. 
     - To authenticate we must use our Github Apps secret key and we can't put that in the client side code.
     - Certain endpoints are not available with user token that we use in the client side code so we must relay requests to the server where we can use an App token (again something we don't want to have in the client side code)
-    - Relay code isn't hard to do but it is a TO DO to put my implementation on github
-- The preview currently only works for markdown
+- The preview currently only works for markdown  
+
+## To do
+
+ - Could integrate Gatekeeper like code into my own [relay](https://github.com/rhyst/github-relay) code rather than having two seperate applications.
 
 ## Instructions
 
@@ -80,7 +83,7 @@ Serve the contents of `./dist` on your web server.
 
 1. Github Gatekeeper to relay authentication requests from your app. Roll your own or deploy [https://github.com/prose/gatekeeper] on your server and point `GATEKEEPERURL` 
 at it.
-2. Relay for get requests. Roll your own or (link to repo with example coming soon).
+2. Relay for get requests. Roll your own or [use the one I made](https://github.com/rhyst/github-relay).
 3. Github App created and installed on a repository. Instructions [here](https://developer.github.com/apps/building-github-apps/creating-a-github-app/) but to summarise:
     1. In your Github Profile (or an org's settings), go to Developer Settings -> Github Apps -> [New Github App](https://github.com/settings/apps/new)
     2. Fill out the fields the important ones being:
