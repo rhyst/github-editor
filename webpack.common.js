@@ -1,8 +1,9 @@
 var webpack = require("webpack");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+var configLocation = './config.js';
 try {
-    var rawConfig = require('./config.js');
+    var rawConfig = require(configLocation);
 } catch (e) {
     console.log('Missing config. Ensure you have a config file at the project root.');
     process.exit()
