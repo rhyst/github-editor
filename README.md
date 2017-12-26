@@ -63,6 +63,33 @@ errors
 }
 ```
 
+The file at MARKDOWNFUNCTIONLOCATION should look like this:
+
+```
+module.exports = [
+    function markdown1(metadata: any, content: string) {
+	// do something
+	return content;
+    },	
+    function markdown2(metadata: any, content: string) {
+	// do something
+	return content;
+    }
+]
+```
+
+The file at VALIDATONLOCATION should look like this:
+
+```
+module.exports = function validator(content: string) {
+	const statuses = [];
+	if (content.indexOf("someterm") > -1) {
+		status.push({status: "danger", errorText: "someterm should not be in this file"})
+	}
+	return statuses;
+}
+```
+
 ### Build
 
 To run a webpack dev server:
